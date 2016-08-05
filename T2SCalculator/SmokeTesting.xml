@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeTest">
+  <suite-files>
+  	<suite-file path="TC001.xml" />
+  	<suite-file path="TC002_01.xml" />
+    <suite-file path="TC002_02.xml" />
+    <suite-file path="TC003_01.xml" />
+    <suite-file path="TC003_02.xml" /> 
+    <suite-file path="TC004.xml" />
+  </suite-files>
+</suite> <!-- Suite -->
