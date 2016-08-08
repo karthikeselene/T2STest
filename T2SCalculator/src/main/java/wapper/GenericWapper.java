@@ -14,9 +14,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import utils.Reporter;
+
 public class GenericWapper {
 
-	protected static RemoteWebDriver driver = null;
+	protected static RemoteWebDriver driver;
 	protected static Properties prop;
 	protected static Select dropdown;
 	String url;
@@ -53,6 +55,9 @@ public class GenericWapper {
 			driver.get(url);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
+			Reporter.reportStep("The Application launched in " + browser + " successfully", "PASS");
+			
 		} catch (WebDriverException e){
 			System.out.println("WebDriver Exception"+e.getMessage());
 		}
@@ -72,6 +77,7 @@ public class GenericWapper {
 		
 		try {
 			driver.findElementByName(name).sendKeys(enter);
+			Reporter.reportStep("Successfully Enter Value into the field", "PASS");
 		} catch (NoSuchElementException e) {			
 			System.out.println("No such element is found at the Name" + name);			
 		}catch (WebDriverException e){
@@ -90,6 +96,7 @@ public class GenericWapper {
 		
 		try {
 			driver.findElementByName(name).click();
+			Reporter.reportStep("Successfully click the button", "PASS");
 		} catch (NoSuchElementException e) {			
 			System.out.println("No such element is found at the Name" + name);			
 		}catch (WebDriverException e){
@@ -190,6 +197,31 @@ public class GenericWapper {
 		} catch (WebDriverException e){
 			System.out.println("WebDriver Exception"+e.getMessage());
 		}
+	}
+	
+	public void loadObjects() throws FileNotFoundException, IOException{
+		prop = new Properties();
+		prop.load(new FileInputStream(new File("./object.properties")));
+	}
+	
+	/**
+	 * This method will verify the given text
+	 * @param xpath - The locator of the object in xpath
+	 * @param text  - The text to be verified
+	 * @author Karthikeyan Rajendran
+	 */
+	public boolean verifyTextByXpath(String xpath, String text){
+		
+		boolean bReturn = false;
+		
+		String sText = driver.findElementByXPath(xpath).getText();
+		if (driver.findElementByXPath(xpath).getText().trim().equalsIgnoreCase(text)){
+			Reporter.reportStep("The text: "+sText+" matches with the value :"+text, "PASS");
+            bReturn = true;		
+		}else{
+			Reporter.reportStep("The text: "+sText+" did not match with the value :"+text, "FAIL");
+		}
+		return bReturn;
 	}
 	
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+    <classes>  
+      <class name="testcases.TC001"/>
+      <class name="testcases.TC002_01"/>
+      <class name="testcases.TC002_02"/>
+      <class name="testcases.TC003_01"/>  
+      <class name="testcases.TC003_02"/>	   
+      <class name="testcases.TC004"/>
+      <class name="testcases.TC005"/>
+      <class name="testcases.TC006"/>
+      <class name="testcases.TC007"/>
+      <class name="testcases.TC008"/>
+      <class name="testcases.TC009"/>
+      <class name="testcases.TC010"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

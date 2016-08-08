@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testcases.TC008">
+      <class name="utils.DataInputProvider">
         <methods>
-          <include name="tearDown"/>
-          <include name="checkTC008"/>
+          <include name="checkTest"/>
         </methods>
-      </class> <!-- testcases.TC008 -->
+      </class> <!-- utils.DataInputProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,19 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <test name="Test(failed)" parallel="classes">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test(failed)">
     <classes>
-      <class name="testcases.TC002_02">
+      <class name="testcases.TC001">
         <methods>
-          <include name="checkTC002_02"/>
-          <include name="tearDown"/>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testcases.TC002_02 -->
+      </class> <!-- testcases.TC001 -->
+      <class name="testcases.TC004">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC004 -->
+      <class name="testcases.TC010">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- testcases.TC010 -->
+      <class name="testcases.TC009">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC009 -->
+      <class name="testcases.TC005">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="checkTC005"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC005 -->
+      <class name="testcases.TC007">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="checkTC007"/>
+        </methods>
+      </class> <!-- testcases.TC007 -->
       <class name="testcases.TC002_01">
         <methods>
-          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
         </methods>
       </class> <!-- testcases.TC002_01 -->
+      <class name="testcases.TC002_02">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC002_02 -->
+      <class name="testcases.TC003_01">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC003_01 -->
+      <class name="testcases.TC008">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="checkTC008"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC008 -->
+      <class name="testcases.TC006">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="checkTC006"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC006 -->
+      <class name="testcases.TC003_02">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.TC003_02 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
