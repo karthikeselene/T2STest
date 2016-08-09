@@ -16,11 +16,11 @@ import wapper.ApplicationWrapper;
 
 public class TC002_01 extends ApplicationWrapper {
 	
-	@Test
-	public void checkTC002_01(){
+	@Test(dataProvider="fecthData")
+	public void checkTC002_01(String fNumber,String sNumber){
 		new CalculatorPage().
-		enterFirstNumber("a").
-		enterSecondNumber("22").
+		enterFirstNumber(fNumber).
+		enterSecondNumber(sNumber).
 		clickCalcualte();
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		if(wait.until(ExpectedConditions.alertIsPresent())==null){
@@ -34,7 +34,6 @@ public class TC002_01 extends ApplicationWrapper {
 		Reporter.reportStep("System will throw validation message - 'Please Enter First value'.", "PASS");
         Reporter.reportStep("TestCase TCOO2_01 Passed Succesfully", "PASS");		
 	} 
-				
 	}
 	
 	@BeforeClass
